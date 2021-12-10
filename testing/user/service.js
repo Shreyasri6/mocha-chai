@@ -14,3 +14,16 @@ module.exports.getAll= async ()=>{
     const user= await UserModel.find();
     return user;
 }
+
+module.exports.updates = async ({ department }, { pnumber}) => {
+    const users = await UserModel.updateOne({
+      department: department
+    }, {
+      pnumber:pnumber
+    }, {
+      multi: true
+    });
+    return users;
+  };
+
+  
