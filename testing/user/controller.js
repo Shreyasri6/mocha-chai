@@ -14,4 +14,9 @@ module.exports.getAll= async (req, res)=>{
     res.send(response);
 }
 
+
+module.exports.updates = async (req, res) => {
+  const response = await user.updates(req.paramas, req.body);
+  res.send(response);
+};
 console.log("this working")
