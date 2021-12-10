@@ -44,3 +44,21 @@ describe("/POST book", () => {
       });
   });
 });
+
+describe("/POST book", () => {
+  it("it should nbe an object", (done) => {
+    let user = ["Khushi"]
+    chai
+      .request(server)
+      .post("/user")
+      .send(user)
+      .end((err, res) => {
+       
+        res.body.should.be.a("object");
+        res.body.should.have.property("errors");
+        
+        done();
+      });
+  });
+});
+
